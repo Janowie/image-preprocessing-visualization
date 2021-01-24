@@ -1,0 +1,7 @@
+.canvas-area {
+}
+
+.canvas-area > img,
+.canvas-area > canvas {
+    max-width: 100%;
+}
