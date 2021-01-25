@@ -1,0 +1,18 @@
+{
+  "filter_gray_scale": {
+    "args": null
+  },
+  "filter_threshold": {
+    "args": [
+      {
+        "name": "threshold",
+        "type": "number",
+        "value": 50,
+        "min": 0
+      }
+    ]
+  },
+  "filter_custom_convolution": {
+    "args": null
+  }
+}

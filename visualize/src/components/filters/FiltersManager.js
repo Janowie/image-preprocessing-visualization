@@ -1,3 +1,5 @@
+import filterSettings from './filters.json';
+
 class FiltersMixin {
 
   constructor() {
@@ -21,16 +23,30 @@ class FiltersMixin {
 
   runFilter = function (image, filter, args) {
     // Run filter by given filter name
-    return this[filter](this.getPixels(image), args)
+    if (this[filter]) {
+      return this[filter](this.getPixels(image), args);
+    }
+    return null;
+  }
+
+  getSettings = function (filter) {
+    if (this.settings[filter]) {
+      return this.settings[filter];
+    }
+    return null;
   }
 }
 
 
 export class FiltersManager extends FiltersMixin {
 
+  constructor() {
+    super();
+    this.settings = filterSettings;
+  }
+
   // Filter functions
   filter_gray_scale = function(pixels, args) {
-
     let d = pixels.data;
     for (let i=0; i<d.length; i+=4) {
       let r = d[i];
@@ -44,7 +60,8 @@ export class FiltersManager extends FiltersMixin {
     return pixels;
   }
 
-  filter_threshold = function(pixels, threshold) {
+  filter_threshold = function(pixels, args) {
+    let threshold = args["threshold"];
     var d = pixels.data;
     for (var i=0; i<d.length; i+=4) {
       var r = d[i];
@@ -54,6 +71,10 @@ export class FiltersManager extends FiltersMixin {
       d[i] = d[i+1] = d[i+2] = v
     }
     return pixels;
+  };
+
+  filter_custom_convolution = function (pixels, args) {
+
   };
 
 }
