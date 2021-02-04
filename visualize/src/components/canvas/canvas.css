@@ -7,10 +7,17 @@
 }
 
 .mario-canvas .row {
-    vertical-align: auto;
     max-width: 100%;
+}
+
+.mario-canvas .controls {
+    display: block;
+    text-align: initial;
+    width: 80%;
+    max-width: 450px;
 }
 
 .mario-canvas canvas {
     border: 1px solid #105f72;
+    width: 100%;
 }
