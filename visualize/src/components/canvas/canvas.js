@@ -9,6 +9,7 @@ export default function Canvas(props) {
   const { filtered_image, canvas_dimensions, set_canvas_dimensions } = props;
 
   const canvas = React.useRef(null);
+  const image_canvas = React.useRef(null);
   const image = React.useRef(null);
 
   React.useEffect(() => {
@@ -23,11 +24,18 @@ export default function Canvas(props) {
         height: image.current.height,
         width: image.current.width
       })
+      console.log("Image loaded");
+      draw(image.current, image_canvas);
     }
   }
 
-  const draw = (pixels) => {
-    let ctx = canvas.current.getContext('2d');
+  const draw = (pixels, specific_canvas) => {
+    let drawing_canvas = specific_canvas;
+    if (!drawing_canvas) {
+      drawing_canvas = canvas;
+    }
+
+    let ctx = drawing_canvas.current.getContext('2d');
     ctx.putImageData(pixels, 0, 0);
   }
 
@@ -40,7 +48,14 @@ export default function Canvas(props) {
           ref={image}
           src={PragueImage}
           alt="Prague"
-          style={{"border": "1px solid"}}
+          style={{"border": "1px solid", "visibility": "hidden"}}
+        />
+
+        <canvas
+          ref={image_canvas}
+          width={canvas_dimensions.width}
+          height={canvas_dimensions.height}
+          style={{"border": "1px solid", visibility: (canvas_dimensions.width && canvas_dimensions.height ? "visible": "hidden")}}
         />
 
         <canvas

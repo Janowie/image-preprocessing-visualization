@@ -73,6 +73,19 @@ export class FiltersManager extends FiltersMixin {
     return pixels;
   };
 
+  filter_threshold_ticked = function(pixels, tick, args) {
+    let threshold = args["threshold"];
+    var d = pixels;
+
+    var r = d[tick];
+    var g = d[tick+1];
+    var b = d[tick+2];
+    var v = (0.2126*r + 0.7152*g + 0.0722*b >= threshold) ? 255 : 0;
+    d[tick] = d[tick+1] = d[tick+2] = v
+
+    return d;
+  };
+
   filter_custom_convolution = function (pixels, args) {
 
   };

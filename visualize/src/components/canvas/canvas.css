@@ -5,3 +5,12 @@
 .canvas-area > canvas {
     max-width: 100%;
 }
+
+.mario-canvas .row {
+    vertical-align: auto;
+    max-width: 100%;
+}
+
+.mario-canvas canvas {
+    border: 1px solid #105f72;
+}
