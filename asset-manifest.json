@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/visualize/static/css/main.df384dc1.chunk.css",
+    "main.js": "/visualize/static/js/main.e0837073.chunk.js",
+    "main.js.map": "/visualize/static/js/main.e0837073.chunk.js.map",
+    "runtime-main.js": "/visualize/static/js/runtime-main.4c6edb36.js",
+    "runtime-main.js.map": "/visualize/static/js/runtime-main.4c6edb36.js.map",
+    "static/js/2.e6d3f587.chunk.js": "/visualize/static/js/2.e6d3f587.chunk.js",
+    "static/js/2.e6d3f587.chunk.js.map": "/visualize/static/js/2.e6d3f587.chunk.js.map",
+    "static/js/3.7806c3d2.chunk.js": "/visualize/static/js/3.7806c3d2.chunk.js",
+    "static/js/3.7806c3d2.chunk.js.map": "/visualize/static/js/3.7806c3d2.chunk.js.map",
+    "index.html": "/visualize/index.html",
+    "static/css/main.df384dc1.chunk.css.map": "/visualize/static/css/main.df384dc1.chunk.css.map",
+    "static/js/2.e6d3f587.chunk.js.LICENSE.txt": "/visualize/static/js/2.e6d3f587.chunk.js.LICENSE.txt",
+    "static/media/mario_bg.d6578ab6.png": "/visualize/static/media/mario_bg.d6578ab6.png",
+    "static/media/prague.bb819fb6.jpg": "/visualize/static/media/prague.bb819fb6.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4c6edb36.js",
+    "static/js/2.e6d3f587.chunk.js",
+    "static/css/main.df384dc1.chunk.css",
+    "static/js/main.e0837073.chunk.js"
+  ]
+}
