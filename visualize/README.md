@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Filter visualization
+link: https://janowie.github.io/image-preprocessing-visualization/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For the final visualization project, a filter visualization tool has been created. Its main goal is to show the
+process of applying given filter on an image. Users can easily change the kernel matrix and explore how
+minor changes influence the outcome.
+Its functionality currently includes:
+- Setting the kernel (automatically initialized with a Gaussian blur)
+- Setting background color – to show how the padding added changes the color of the “first”
+pixels of the image
+- Setting pixel size – although using different images is not supported in the current version, user
+can specify fictional pixel size demonstrated by the gray grid.
+- Speed of the animation
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Technology
+This project was developed in React and the filtering part is done using the HTML5 Canvas elements.
+### Pixel size
+If we were to use “normal” images, the pixels are so small (on all todays monitors) that one could barely
+see the kernel moving over the pixels and the whole animation would be too slow. Since our main goal
+was to show the movement and convolution of the kernel, we have decided to use an image composed
+of “large pixels” and draw a grid over it to represent them. The grid size, and therefore the pixel size, can
+be specified by users if they wish to change the granularity of the effect of the filter applied.
+### Future work
+In the future, if this tool were to be used in the real world, one could implement the option of changing
+the image or changing the kernel size. We decided not to implement these features for now, even tough
+everything is ready for such update.
+### Final remarks
+A surprising number of hours was spent developing this fairly simple tool. Anyone using it can still
+experience few bugs. (The best way to get rid of them is to refresh the website.)
