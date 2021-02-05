@@ -1,6 +1,6 @@
 import React from "react";
-import Mario from "../../static/mario_bg.png";
 import {dot} from "mathjs";
+import Mario from "../static/mario_bg.png";
 
 export default function Canvases(props) {
 
@@ -49,9 +49,19 @@ export default function Canvases(props) {
 
   React.useEffect(() => {
     if (props.tick_counter) {
+      if (props.tick_counter.x === 0 && props.tick_counter.y === 0) {
+        initCanvases();
+      }
       draw();
     }
   })
+
+  React.useEffect(() => {
+    if (props.state.reset) {
+      initCanvases();
+      draw();
+    }
+  }, [props.state.reset])
 
   // ###########################################################################################
   // ## METHODS
@@ -137,10 +147,13 @@ export default function Canvases(props) {
     let kernel = props.kernel;
     let v = split_channels(values);
 
-    let color = `rgba(${dot(v[0], kernel)},${dot(v[1], kernel)},${dot(v[2], kernel)},255)`;
-    // let color = `rgba(${v[0][4]},${v[1][4]},${v[2][4]},255)`;
-    // console.log("color", color);
-
+    let color = "rgba(255,255,255,0)";
+    try {
+      color = `rgba(${dot(v[0], kernel)},${dot(v[1], kernel)},${dot(v[2], kernel)},255)`;
+    }
+    catch (err) {
+      // ERROR !
+    }
     return color;
   }
 
