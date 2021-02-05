@@ -49,9 +49,6 @@ export default function Canvases(props) {
 
   React.useEffect(() => {
     if (props.tick_counter) {
-      if (props.tick_counter.x === 0 && props.tick_counter.y === 0) {
-        initCanvases();
-      }
       draw();
     }
   })

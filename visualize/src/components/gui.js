@@ -75,12 +75,13 @@ export default function GUI(props) {
   }
 
   const reset = () => {
+    tick_counter = null;
     setState({
       ...state,
       "interval": null,
       "tick_counter": {
-       "x": 0,
-       "y": 0
+        "x": 0,
+        "y": 0
       },
       "reset": true
     })
